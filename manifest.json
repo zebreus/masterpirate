@@ -1,0 +1,29 @@
+{
+    "name": "Context Menus Sample",
+    "description": "Shows some of the features of the Context Menus API",
+    "version": "0.7",
+    "permissions": [ "contextMenus", "tabs", "offscreen" ],
+    "host_permissions": [ "https://*/", "<all_urls>" ],
+    "background": {
+        "service_worker": "sample.js"
+    },
+    "web_accessible_resources": [
+        {
+            "resources": [ "*" ],
+            "matches": [
+                "https://sci-hub.ru/*",
+                "https://sci-hub.st/*",
+                "https://libgen.is/*",
+                "https://standard--template--construct-org.ipns.dweb.link/*"
+            ]
+        }
+    ],
+    "icons": {
+        "16": "pirate-16.png",
+        "32": "pirate-32.png"
+    },
+    "content_security_policy": {
+        "extension_pages": "default-src 'self'; connect-src https://* data: blob: filesystem:;"
+    },
+    "manifest_version": 3
+}
